@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", () => {
     fetchCryptoData();
 });
@@ -66,11 +64,18 @@ function renderTable() {
 function renderPagination() {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
+
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
         button.textContent = i;
         button.className = i === currentPage ? 'active' : '';
-        button.onclick = () => changePage(i);
+        
+        button.onclick = ((page) => {
+            return () => {
+                changePage(page);
+            };
+        })(i);
+
         pagination.appendChild(button);
     }
 }
@@ -78,6 +83,7 @@ function renderPagination() {
 function changePage(page) {
     currentPage = page;
     renderTable();
+    renderPagination();
 }
 
 function toggleFavorite(id) {
@@ -97,7 +103,7 @@ function sortTable(n) {
     table = document.getElementById("crypto-table");
     switching = true;
     dir = sortDirection === 'asc' ? 'desc' : 'asc'; 
-    sortDirection = dir; // Update global sorting direction
+    sortDirection = dir; 
 
     // Remove arrows from all headers
     const headers = table.getElementsByTagName('th');
@@ -144,7 +150,7 @@ function searchCryptos() {
     const searchInput = document.getElementById('search-input').value.toLowerCase();
     filteredCryptoData = cryptoData.filter(crypto => crypto.name.toLowerCase().includes(searchInput));
     totalPages = Math.ceil(filteredCryptoData.length / itemsPerPage);
-    currentPage = 1; // Reset to the first page after a new search
+    currentPage = 1;
     renderTable();
     renderPagination();
 }
