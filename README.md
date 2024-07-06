@@ -15,7 +15,7 @@ Cryptocurrency Tracker and Price Chart is a web application that fetches real-ti
 
 ## Demo
 
-You can view a live demo of the application [here](#) (replace with your deployment link).
+You can view a live demo of the application [here](https://prince0000.github.io/Crypto-Tracker/) (replace with your deployment link).
 
 
 ## Features
@@ -49,7 +49,7 @@ To run this project locally, follow these steps:
 2. **Navigate into the project directory:**
 
    ```bash
-   cd cryptocurrency-tracker
+   cd crypto-tracker
    ```
 
 3. **Open `index.html` in your web browser.**
@@ -81,5 +81,5 @@ Contributions are welcome! Please follow these steps to contribute:
 
 ## Contact
 
-- **Maintainer**: [Your Name](mailto:princer6450@gmail.com)
-- **GitHub**: [YourGitHub](https://github.com/Prince0000)
+- **Maintainer**: [Prince Raj](mailto:princer6450@gmail.com)
+- **GitHub**: [Prince0000](https://github.com/Prince0000)
