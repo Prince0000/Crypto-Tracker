@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Price Chart</title>
+    <link rel="stylesheet" href="coin.css">
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Cryptocurrency Price  Chart</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../favorite/favorites.html">Favorites</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="chart">
+            <div class="details">
+              <div class="heading">
+                <h2><span class="coinname"></span> Price Details & Chart </h2>
+                <h3>Market Cap Rank : <span  id="mark-cap-rank"></span></h3>
+              </div>
+                <div class="crypto-info">
+                    <!-- Skeleton loader for cryptocurrency information -->
+                    <div class="crypto-item skeleton" id="crypto-skeleton">
+                        <div class="skeleton skeleton-image"></div>
+                        <div class="crypto-details">
+                            <div class="skeleton skeleton-large-text"></div>
+                            <div class="skeleton skeleton-small-text"></div>
+                            <div class="skeleton skeleton-small-text"></div>
+                        </div>
+                    </div>
+                    <!-- Displaying cryptocurrency information -->
+                    <div class="crypto-item" id="crypto-info" style="display: none;">
+                        <img id="image" alt="Bitcoin Icon">
+                        <div class="crypto-details">
+                            <p id="desc"></p>
+                            <strong>
+                                <p id="price">Price: Loading...</p>
+                            </strong>
+                            <strong>
+                                <p id="market-cap">Market Cap: Loading...</p>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h2>Price Chart</h2>
+                <button data-period="1" class="active">24 hr</button>
+                <button data-period="30">30 D</button>
+                <button data-period="90">3 M</button>
+            </div>
+            <!-- Skeleton loader for chart -->
+            <div class="price-chart skeleton-chart" id="chart-skeleton"></div>
+            <!-- Displaying Chart.js chart -->
+            <div class="price-chart" id="price-chart" style="display: none;">
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/coin.js"></script> <!-- JavaScript for fetching data and rendering chart -->
+</body>
+
+</html>

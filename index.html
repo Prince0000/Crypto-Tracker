@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-title">Crypto Tracker</span>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="./favorite/favorites.html">Favorites</a>
+            <input type="text" id="search-input" placeholder="Search..." onkeyup="searchCryptos()">
+        </div>
+    </nav>
+    <div class="container">
+        <div class="heading-con">
+            <h1>All Cryptocurrencies </h1>
+            <div><span style="color: green;">▲ Ascending</span>
+                <span style="color: red;">▼ Descending</span>
+            </div>
+        </div>
+
+
+        <div class="responsive-table">
+
+            <table id="crypto-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)" class="asc">Position</th>
+                        <th>Icon</th>
+                        <th onclick="sortTable(2)">Name </th>
+                        <th onclick="sortTable(3)">Price </th>
+                        <th onclick="sortTable(4)">Volume </th>
+                        <th onclick="sortTable(5)">Market Cap </th>
+                        <th>Favorite</th>
+                    </tr>
+                </thead>
+                <tbody id="crypto-table-body">
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination" id="pagination">
+            <!-- Pagination buttons will be inserted here by JavaScript -->
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
